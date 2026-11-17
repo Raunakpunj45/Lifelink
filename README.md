@@ -377,17 +377,7 @@ LifeLink turns a slow, manual search for blood donors into a quick online search
 
 ---
 
-## 16. Individual Contributions
-
-| Member | Roll No. | Contribution |
-|---|---|---|
-| | | |
-| | | |
-| | | |
-
----
-
-## 17. Acknowledgements and References
+## 16. Acknowledgements and References
 
 - Bootstrap, Bootstrap Icons, Chart.js, Leaflet, Express, better-sqlite3: open-source libraries under the MIT/BSD licences.
 - Map data © OpenStreetMap contributors.
