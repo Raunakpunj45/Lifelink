@@ -4,9 +4,9 @@
 
 | | |
 |---|---|
-| Team members | _Name (Roll No.)_, _Name (Roll No.)_, _Name (Roll No.)_ |
+| Team members | Raunak (BT24CSD035), Deepak (BT24CSD040) |
 | Subject | TPDS-III |
-| Guide | _Guide name_ |
+| Guide | Dr Santosh Sahu |
 
 ---
 
@@ -216,9 +216,9 @@ npm test         # runs all 21 test cases
 | Become a Donor | `/register.html` | Fill in the form and tick consent. |
 | Request Blood | `/request.html` | Post a request; it tells you how many donors match. |
 | Dashboard | `/dashboard.html` | Charts, a map and CSV downloads. |
-| Admin | `/admin.html` | Key: `admin123`. Change request status, update a donor's last donation date or availability, delete a donor. |
+| Admin | `/admin.html` | Use the admin key configured through the `ADMIN_KEY` environment variable. Change request status, update a donor's last donation date or availability, delete a donor. |
 
-To use your own admin key: `ADMIN_KEY=mysecret npm start`
+Set a private admin key before starting the app: `ADMIN_KEY=mysecret npm start`. Do not publish the real key in this README or commit it to GitHub.
 
 **Error handling users will see**
 - Red messages under each wrong form field (browser-side checks).
@@ -232,7 +232,7 @@ To use your own admin key: `ADMIN_KEY=mysecret npm start`
 docker compose up --build
 # or
 docker build -t lifelink .
-docker run -p 3000:3000 -e ADMIN_KEY=admin123 lifelink
+docker run -p 3000:3000 -e ADMIN_KEY=your-secret-key lifelink
 ```
 
 On the first start, the container loads sample data. The data is kept in the `lifelink-data` volume.
@@ -260,6 +260,8 @@ git pull origin main
 ```
 
 ### Deploy on Render
+
+**Live demo:** https://lifelink-9c3f.onrender.com
 
 1. Push the code to GitHub.
 2. On render.com, choose **New → Web Service** and connect the repository.
@@ -401,7 +403,7 @@ LifeLink turns a slow, manual search for blood donors into a quick online search
 
 ## Data Analytics Dashboard
 
-Created an interactive dashboard using Tableau Public.
+The completed interactive Tableau Public dashboard workbook (`LifeLink_Dashboard.twb`) and its source CSV datasets (`donors.csv` and `requests.csv`) are included in this repository. Open the workbook in Tableau Public and refresh the data sources if Tableau asks for their file locations.
 
 The dashboard includes:
 - Eligible Donors by Blood Group
