@@ -397,3 +397,18 @@ LifeLink turns a slow, manual search for blood donors into a quick online search
 - Leaflet documentation: https://leafletjs.com
 - Docker documentation: https://docs.docker.com
 - Render documentation: https://render.com/docs
+
+
+## Data Analytics Dashboard
+
+Created an interactive dashboard using Tableau Public.
+
+The dashboard includes:
+- Eligible Donors by Blood Group
+- Donor Availability
+- Donor Distribution Map
+- Blood Demand by Group
+- Request Status
+- KPI Cards for key metrics
+
+Dataset: Sample donor and blood request data.
