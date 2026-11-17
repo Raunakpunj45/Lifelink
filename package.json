@@ -1,0 +1,22 @@
+{
+  "name": "lifelink",
+  "version": "1.0.0",
+  "description": "LifeLink - Blood Donor Finder | TPDS-III Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seed.js",
+    "test": "node --test tests/api.test.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "bootstrap": "5.3.3",
+    "bootstrap-icons": "1.11.3",
+    "chart.js": "4.4.4",
+    "express": "^4.21.0",
+    "leaflet": "1.9.4"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  }
+}

@@ -1,0 +1,67 @@
+:root {
+  --brand: #c8102e;
+}
+
+body {
+  background: #f6f7f9;
+}
+
+.navbar {
+  background: var(--brand);
+}
+
+.btn-brand {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+.btn-brand:hover {
+  background: #a00d25;
+  border-color: #a00d25;
+  color: #fff;
+}
+
+.hero {
+  background: linear-gradient(135deg, #c8102e, #8b0a1f);
+  color: #fff;
+  border-radius: 0.75rem;
+}
+
+.group-pill {
+  display: inline-block;
+  min-width: 46px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #fde8eb;
+  color: var(--brand);
+  font-weight: 700;
+  text-align: center;
+}
+
+.donor-card {
+  border-left: 4px solid var(--brand);
+}
+
+.kpi {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.chart-box {
+  position: relative;
+  height: 280px;
+}
+
+#map {
+  height: 380px;
+  border-radius: 0.5rem;
+}
+
+.urgency-Critical { border-left: 4px solid #dc3545; }
+.urgency-Urgent { border-left: 4px solid #fd7e14; }
+.urgency-Normal { border-left: 4px solid #6c757d; }
+
+footer {
+  font-size: 0.85rem;
+}

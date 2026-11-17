@@ -1,0 +1,13 @@
+services:
+  lifelink:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - ADMIN_KEY=admin123
+    volumes:
+      - lifelink-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  lifelink-data:

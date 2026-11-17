@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LifeLink | Become a Donor</title>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/"><i class="bi bi-droplet-fill"></i> LifeLink</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Find Donor</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/register.html">Become a Donor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/request.html">Request Blood</a></li>
+          <li class="nav-item"><a class="nav-link" href="/dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="/admin.html">Admin</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-white">
+            <h5 class="mb-0"><i class="bi bi-person-plus text-danger"></i> Register as a Blood Donor</h5>
+          </div>
+          <div class="card-body">
+            <div class="alert alert-light border small">
+              You must be 18-65 years old and at least 90 days must have passed since your last donation to appear in search.
+            </div>
+            <form id="donorForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Full name *</label>
+                  <input name="name" class="form-control" required minlength="2" maxlength="60">
+                  <div class="invalid-feedback">Enter your name (2-60 characters).</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Mobile number *</label>
+                  <input name="phone" class="form-control" required pattern="[6-9][0-9]{9}" maxlength="10" inputmode="numeric">
+                  <div class="invalid-feedback">Enter a valid 10 digit mobile number.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input name="email" type="email" class="form-control">
+                  <div class="invalid-feedback">Enter a valid email.</div>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Age *</label>
+                  <input name="age" type="number" class="form-control" required min="18" max="65">
+                  <div class="invalid-feedback">Age must be 18-65.</div>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Gender *</label>
+                  <select name="gender" class="form-select" required>
+                    <option value="">Select</option><option>Male</option><option>Female</option><option>Other</option>
+                  </select>
+                  <div class="invalid-feedback">Select gender.</div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Blood group *</label>
+                  <select name="blood_group" class="form-select" data-fill="groups" required>
+                    <option value="">Select</option>
+                  </select>
+                  <div class="invalid-feedback">Select blood group.</div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">City *</label>
+                  <select name="city" class="form-select" data-fill="cities" required>
+                    <option value="">Select</option>
+                  </select>
+                  <div class="invalid-feedback">Select city.</div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Area / Locality</label>
+                  <input name="area" class="form-control" maxlength="60">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Last donation date</label>
+                  <input name="last_donation" type="date" class="form-control">
+                  <div class="form-text">Leave empty if you have never donated.</div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="consent" required>
+                    <label class="form-check-label" for="consent">I agree to share my contact number with people who need blood.</label>
+                    <div class="invalid-feedback">Consent is required.</div>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-brand w-100 mt-4"><i class="bi bi-heart-pulse"></i> Register</button>
+            </form>
+            <div id="msg" class="mt-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/forms.js"></script>
+</body>
+</html>

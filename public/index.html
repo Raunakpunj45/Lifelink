@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LifeLink | Find Blood Donors</title>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/"><i class="bi bi-droplet-fill"></i> LifeLink</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="/">Find Donor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/register.html">Become a Donor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/request.html">Request Blood</a></li>
+          <li class="nav-item"><a class="nav-link" href="/dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="/admin.html">Admin</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <section class="hero p-4 p-md-5 mb-4">
+      <h1 class="fw-bold">Find a blood donor near you</h1>
+      <p class="mb-4">Search compatible donors who are available and eligible to donate right now.</p>
+      <form id="searchForm" class="row g-2">
+        <div class="col-md-4">
+          <select name="blood_group" class="form-select form-select-lg" data-fill="groups" required>
+            <option value="">Patient blood group</option>
+          </select>
+        </div>
+        <div class="col-md-5">
+          <select name="city" class="form-select form-select-lg" data-fill="cities" required>
+            <option value="">City</option>
+          </select>
+        </div>
+        <div class="col-md-3 d-grid">
+          <button class="btn btn-light btn-lg fw-semibold"><i class="bi bi-search"></i> Search</button>
+        </div>
+      </form>
+    </section>
+
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div id="summary" class="mb-3"></div>
+        <div id="results" class="row g-3"></div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-white d-flex justify-content-between align-items-center">
+            <h6 class="mb-0"><i class="bi bi-megaphone text-danger"></i> Open Requests</h6>
+            <a href="/request.html" class="btn btn-sm btn-brand">Post</a>
+          </div>
+          <div id="requests" class="list-group list-group-flush" style="max-height:520px;overflow:auto"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal fade" id="contactModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content text-center p-3">
+        <i class="bi bi-telephone-fill text-success display-5"></i>
+        <h5 id="cName" class="mt-2"></h5>
+        <a id="cPhone" class="fs-4 fw-bold text-decoration-none" href="#"></a>
+        <p class="small text-muted mt-2 mb-3">Please call politely and only for a genuine need.</p>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center text-muted py-4">LifeLink &middot; Every drop counts</footer>
+
+  <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/search.js"></script>
+</body>
+</html>

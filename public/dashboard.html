@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LifeLink | Dashboard</title>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/lib/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/"><i class="bi bi-droplet-fill"></i> LifeLink</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Find Donor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/register.html">Become a Donor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/request.html">Request Blood</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="/admin.html">Admin</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <div class="d-flex flex-wrap gap-2 align-items-center mb-3">
+      <h4 class="me-auto mb-0"><i class="bi bi-bar-chart-line"></i> Donor &amp; Request Analytics</h4>
+      <a href="/api/export/donors.csv" class="btn btn-sm btn-outline-success"><i class="bi bi-download"></i> donors.csv</a>
+      <a href="/api/export/requests.csv" class="btn btn-sm btn-outline-success"><i class="bi bi-download"></i> requests.csv</a>
+    </div>
+
+    <div id="kpis" class="row g-3 mb-3"></div>
+
+    <div class="row g-3">
+      <div class="col-lg-7">
+        <div class="card shadow-sm h-100"><div class="card-body">
+          <h6>Donor availability by city</h6>
+          <div id="map"></div>
+        </div></div>
+      </div>
+      <div class="col-lg-5">
+        <div class="card shadow-sm h-100"><div class="card-body">
+          <h6>Donors by blood group</h6>
+          <div class="chart-box" style="height:380px"><canvas id="groupChart"></canvas></div>
+        </div></div>
+      </div>
+      <div class="col-lg-7">
+        <div class="card shadow-sm"><div class="card-body">
+          <h6>Eligible donors vs units requested (by blood group)</h6>
+          <div class="chart-box"><canvas id="gapChart"></canvas></div>
+        </div></div>
+      </div>
+      <div class="col-lg-5">
+        <div class="card shadow-sm"><div class="card-body">
+          <h6>Request status</h6>
+          <div class="chart-box"><canvas id="statusChart"></canvas></div>
+        </div></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/lib/chart/chart.umd.js"></script>
+  <script src="/lib/leaflet/leaflet.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
